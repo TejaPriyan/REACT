@@ -1,0 +1,15 @@
+import { launch, attachLogs } from './util.mjs';
+const b = await launch();
+const p = await b.newPage({ viewport: { width: 1100, height: 760 } });
+const logs = attachLogs(p);
+await p.goto('file:///home/claude/react-studio/dist/REACT.html'); await p.waitForTimeout(3000);
+console.log('title:', await p.title(), '| h1:', await p.textContent('h1'));
+await p.click('text=CREATE VISUAL');
+await p.waitForFunction(() => document.querySelector('.app')?.dataset.screen === 'studio', null, { timeout: 45000 });
+await p.waitForTimeout(1500);
+await p.click('text=TRY THE DEMO TRACK');
+await p.waitForFunction(() => window.__audio && window.__audio.analysis, null, { timeout: 120000 });
+const a = await p.evaluate(() => ({ bpm: window.__audio.analysis.bpm, dur: window.__audio.duration, playing: window.__audio.playing, ctx: window.__audio.ctx && window.__audio.ctx.state }));
+console.log('file:// studio + demo track', JSON.stringify(a));
+console.log('errors', await p.evaluate(() => window.__errors), logs.filter((l) => !/ERR_FAILED/.test(l)).slice(0, 5).join('\n'));
+await b.close();

@@ -1,0 +1,21 @@
+// Mobile portrait pass (iPhone-ish, touch). usage: node tests/mobile.mjs outDir
+import { chromium } from '/home/claude/.npm-global/lib/node_modules/playwright/index.mjs';
+import { attachLogs, BASE } from './util.mjs';
+import fs from 'node:fs';
+const out = process.argv[2]; fs.mkdirSync(out, { recursive: true });
+const b = await chromium.launch({ args: ['--use-angle=swiftshader', '--use-gl=angle', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--autoplay-policy=no-user-gesture-required'] });
+const ctx = await b.newContext({ viewport: { width: 390, height: 780 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Version/17.0 Mobile/15E148 Safari/604.1' });
+const p = await ctx.newPage(); const logs = attachLogs(p);
+const shot = (n) => p.screenshot({ path: `${out}/${n}.png`, timeout: 120000 }).catch(() => console.log('shot fail', n));
+await p.goto(BASE); await p.waitForTimeout(3000); await shot('m1-landing');
+await p.tap('text=CREATE VISUAL'); await p.waitForTimeout(2500); await shot('m2-studio-audio');
+await p.tap('text=TRY THE DEMO TRACK');
+await p.waitForFunction(() => window.__audio && window.__audio.analysis, null, { timeout: 120000 });
+if (await p.$('.panel-x')) await p.tap('.panel-x'); await p.waitForTimeout(1500); await shot('m3-studio-loaded');
+await p.tap('.tabs button:has-text("MOTION")'); await p.waitForTimeout(900); await shot('m4-motion');
+await p.tap('.tabs button:has-text("STYLE")'); await p.waitForTimeout(700); await shot('m5-style');
+await p.tap('.rec-btn'); await p.waitForTimeout(700); await shot('m6-record');
+const m = await p.evaluate(() => ({ hScroll: document.documentElement.scrollWidth > innerWidth, frame: (() => { const r = document.querySelector('.frame').getBoundingClientRect(); return [Math.round(r.width), Math.round(r.height)]; })(), quality: window.__studio.engine.qualityId }));
+console.log(JSON.stringify(m));
+console.log('errors', await p.evaluate(() => window.__errors), logs.filter((l) => !/ERR_FAILED/.test(l)).slice(0, 6).join('\n'));
+await b.close();
