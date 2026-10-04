@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tejapriyan.github.io/REACT/sitemap.xml
-Host: https://tejapriyan.github.io/REACT/
+Sitemap: https://reactsound.vercel.app/sitemap.xml
+Host: https://reactsound.vercel.app/

@@ -1,9 +1,9 @@
 {
   "name": "react-make-sound-visible",
   "version": "1.0.0",
-  "description": "REACT — Audio-reactive 3D visualizer and motion design studio by Teja Priyan. Make sound visible with real-time WebGL audio synthesis, dynamic particles, custom fonts, and 4K recording.",
+  "description": "REACT — Audio-reactive 3D visualizer and motion design studio by Teja Priyan (https://reactsound.vercel.app/). Make sound visible with real-time WebGL audio synthesis, dynamic particles, custom fonts, and 4K recording.",
   "author": "Teja Priyan <teja1616150@gmail.com>",
-  "homepage": "https://github.com/TejaPriyan/REACT",
+  "homepage": "https://reactsound.vercel.app/",
   "repository": {
     "type": "git",
     "url": "https://github.com/TejaPriyan/REACT.git"

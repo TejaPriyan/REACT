@@ -9,17 +9,24 @@
 </p>
 
 <p align="center">
+  <a href="https://reactsound.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/LIVE%20STUDIO-reactsound.vercel.app-00e5ff?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Studio" />
+  </a>
   <img src="https://img.shields.io/badge/Architecture-100%25%20Client--Side-00e5ff?style=for-the-badge&logoColor=white" alt="Client Side" />
   <img src="https://img.shields.io/badge/Graphics-WebGL2%20Procedural%20Shaders-7928ca?style=for-the-badge&logoColor=white" alt="WebGL2" />
   <img src="https://img.shields.io/badge/Audio-Web%20Audio%20API%20%2B%20Live%20Analysis-ff007f?style=for-the-badge&logoColor=white" alt="Web Audio" />
   <img src="https://img.shields.io/badge/License-Proprietary%20%C2%B7%20All%20Rights%20Reserved-white?style=for-the-badge" alt="License" />
 </p>
 
+<p align="center">
+  🌐 <strong>Experience the Studio Live:</strong> <a href="https://reactsound.vercel.app/">https://reactsound.vercel.app/</a>
+</p>
+
 ---
 
 ## Overview
 
-**REACT** is a high-performance, audio-reactive 3D motion design studio operating directly inside modern web browsers. It turns musical tracks, instruments, or live vocal input into fluid, cinematic 3D visualizers driven by real-time audio telemetry, procedural shaders, and massive particle systems.
+**REACT** ([https://reactsound.vercel.app/](https://reactsound.vercel.app/)) is an advanced, high-performance audio-reactive 3D motion design studio operating directly inside modern web browsers. Conceived and engineered by **Teja Priyan**, REACT transforms audio tracks, musical instruments, and live microphone input into mesmerizing, cinematic 3D visualizers powered by real-time audio telemetry, procedural shaders, and massive GPU particle swarms.
 
 Every computation — from low-frequency Fourier transforms and spectral-flux beat tracking to signed-distance field (SDF) raymarching and particle physics — executes entirely on your local machine with zero network latency, zero cloud dependencies, and uncompromising visual fidelity.
 
@@ -122,6 +129,7 @@ Every computation — from low-frequency Fourier transforms and spectral-flux be
 
 **REACT** is created, designed, and maintained by **Teja Priyan**.
 
+* **Live Studio**: [https://reactsound.vercel.app/](https://reactsound.vercel.app/)
 * **Creator**: Teja Priyan
 * **GitHub**: [@TejaPriyan](https://github.com/TejaPriyan)
 * **Repository**: [https://github.com/TejaPriyan/REACT](https://github.com/TejaPriyan/REACT)

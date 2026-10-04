@@ -29,7 +29,7 @@ export function About() {
           <span style={{ fontSize: '10px', letterSpacing: '0.2em', color: 'var(--accent, #00e5ff)', fontWeight: 600, display: 'block', marginBottom: '6px' }}>CREATOR & ARCHITECT</span>
           <h3 style={{ fontSize: '22px', letterSpacing: '0.06em', margin: '0 0 8px', color: 'var(--ink)' }}>Teja Priyan</h3>
           <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--ash)', margin: 0 }}>
-            Conceived, designed, and engineered as an uncompromising, client-side motion graphics engine. Built to give musicians, producers, designers, and visual artists real-time control over 3D typography, particle dynamics, and audio-driven cinematic rendering.
+            Conceived, designed, and engineered as an uncompromising, client-side motion graphics engine. Built to give musicians, producers, designers, and visual artists real-time control over 3D typography, particle dynamics, and audio-driven cinematic rendering — accessible worldwide at <a href="https://reactsound.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent, #00e5ff)', textDecoration: 'none' }}>reactsound.vercel.app</a>.
           </p>
         </div>
 
@@ -59,9 +59,14 @@ export function About() {
             <span style={{ fontSize: '11px', letterSpacing: '0.08em', color: 'var(--ash)' }}>
               © 2026 <strong>Teja Priyan</strong>. All Rights Reserved.
             </span>
-            <a href="https://github.com/TejaPriyan/REACT" target="_blank" rel="noopener noreferrer" style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--accent, #00e5ff)', textDecoration: 'none' }}>
-              GITHUB REPOSITORY ↗
-            </a>
+            <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+              <a href="https://reactsound.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--accent, #00e5ff)', textDecoration: 'none' }}>
+                LIVE STUDIO ↗
+              </a>
+              <a href="https://github.com/TejaPriyan/REACT" target="_blank" rel="noopener noreferrer" style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--ash)', textDecoration: 'none' }}>
+                GITHUB REPOSITORY ↗
+              </a>
+            </div>
           </div>
           <p style={{ fontSize: '10.5px', color: 'var(--ash)', opacity: 0.8, margin: 0, lineHeight: 1.4 }}>
             Proprietary source code. Unauthorized reproduction, copying, distribution, decompilation, or commercial reuse without written permission is strictly prohibited.
