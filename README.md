@@ -22,6 +22,12 @@
   🌐 <strong>Experience the Studio Live:</strong> <a href="https://reactsound.vercel.app/">https://reactsound.vercel.app/</a>
 </p>
 
+<p align="center">
+  <a href="https://reactsound.vercel.app/" target="_blank">
+    <img src="preview.png" alt="REACT — Audio-Reactive 3D Motion Studio Preview by Teja Priyan" width="100%" style="border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 10px 30px rgba(0,0,0,0.8);" />
+  </a>
+</p>
+
 ---
 
 ## Overview

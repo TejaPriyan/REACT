@@ -47,7 +47,7 @@ function writeHtml() {
        .replace('<!--JS-->', () => `<script>${js.replace(/<\/script/gi, '<\\/script')}</script>`));
 
   // Copy static SEO, favicon, and verification assets to dist
-  const staticFiles = ['google2af4e1ed3191321d.html', 'robots.txt', 'sitemap.xml', 'favicon.png', 'favicon.ico', 'tp-logo.png'];
+  const staticFiles = ['google2af4e1ed3191321d.html', 'robots.txt', 'sitemap.xml', 'favicon.png', 'favicon.ico', 'tp-logo.png', 'preview.png'];
   for (const file of staticFiles) {
     const srcPath = path.join(root, file);
     if (fs.existsSync(srcPath)) {
