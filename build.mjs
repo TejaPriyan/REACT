@@ -54,6 +54,17 @@ function writeHtml() {
       fs.copyFileSync(srcPath, path.join(dist, file));
     }
   }
+
+  // Also duplicate to public/ for hosting providers expecting public as output directory
+  const pub = path.join(root, 'public');
+  fs.mkdirSync(pub, { recursive: true });
+  const distFiles = fs.readdirSync(dist);
+  for (const f of distFiles) {
+    const src = path.join(dist, f);
+    if (fs.statSync(src).isFile()) {
+      fs.copyFileSync(src, path.join(pub, f));
+    }
+  }
 }
 
 const options = {

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tejapriyan.github.io/REACT/sitemap.xml
+Host: https://tejapriyan.github.io/REACT/
