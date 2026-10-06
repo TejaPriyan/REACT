@@ -31,6 +31,7 @@ export function About() {
           <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--ash)', margin: 0 }}>
             Conceived, designed, and engineered as an uncompromising, client-side motion graphics engine. Built to give musicians, producers, designers, and visual artists real-time control over 3D typography, particle dynamics, and audio-driven cinematic rendering — accessible worldwide at <a href="https://reactsound.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent, #00e5ff)', textDecoration: 'none' }}>reactsound.vercel.app</a>.
           </p>
+          <div style={{ marginTop: "14px" }}><a href="https://www.buymeacoffee.com/TejaPriyan" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#FFDD00", color: "#000", padding: "8px 16px", borderRadius: "999px", fontWeight: "bold", textDecoration: "none", fontSize: "13px" }}><span>🍕</span><span>Buy me a pizza</span></a></div>
         </div>
 
         <div className="about-section" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
@@ -71,6 +72,7 @@ export function About() {
           <p style={{ fontSize: '10.5px', color: 'var(--ash)', opacity: 0.8, margin: 0, lineHeight: 1.4 }}>
             Proprietary source code. Unauthorized reproduction, copying, distribution, decompilation, or commercial reuse without written permission is strictly prohibited.
           </p>
+          <div style={{ marginTop: "14px" }}><a href="https://www.buymeacoffee.com/TejaPriyan" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#FFDD00", color: "#000", padding: "8px 16px", borderRadius: "999px", fontWeight: "bold", textDecoration: "none", fontSize: "13px" }}><span>🍕</span><span>Buy me a pizza</span></a></div>
         </div>
       </div>
     </div>

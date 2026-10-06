@@ -211,7 +211,7 @@ export default function Studio({ active }) {
       <div className="actions" data-ui>
         <button type="button" className="btn ghost surprise" onClick={surprise} aria-keyshortcuts="S"><Sparkle size={14} /><span>SURPRISE ME</span></button>
         <button type="button" className="btn ghost cin" onClick={enterCinema} aria-keyshortcuts="C" aria-label="Cinema mode"><Cinema size={16} /><span>CINEMA</span></button>
-        <button type="button" className={`btn rec-btn ${panel === 'export' ? 'on' : ''}`} onClick={() => toggle('export')} aria-keyshortcuts="R"><i className="dot" />RECORD</button>
+        <button type="button" className={`btn rec-btn ${panel === 'export' ? 'on' : ''}`} onClick={() => toggle('export')} aria-keyshortcuts="R"><i className="dot" />RECORD</button><a href="https://www.buymeacoffee.com/TejaPriyan" target="_blank" rel="noopener noreferrer" className="btn ghost" title="Buy me a pizza" style={{ color: "#FFDD00", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "4px" }}><span>🍕</span><span>PIZZA</span></a>
       </div>
 
       <div className={`stage ${dragging ? 'drag' : ''}`} ref={stageEl} {...dnd}>
