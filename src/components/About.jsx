@@ -64,10 +64,7 @@ export function About() {
               <a href="https://reactsound.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--accent, #00e5ff)', textDecoration: 'none' }}>
                 LIVE STUDIO ↗
               </a>
-              <a href="https://github.com/TejaPriyan/REACT" target="_blank" rel="noopener noreferrer" style={{ fontSize: '11px', letterSpacing: '0.1em', color: 'var(--ash)', textDecoration: 'none' }}>
-                GITHUB REPOSITORY ↗
-              </a>
-            </div>
+              </div>
           </div>
           <p style={{ fontSize: '10.5px', color: 'var(--ash)', opacity: 0.8, margin: 0, lineHeight: 1.4 }}>
             Proprietary source code. Unauthorized reproduction, copying, distribution, decompilation, or commercial reuse without written permission is strictly prohibited.
