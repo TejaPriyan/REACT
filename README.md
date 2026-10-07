@@ -73,7 +73,7 @@ Every computation — from low-frequency Fourier transforms and spectral-flux be
 
 ### 6. Studio Recording & Export Engine
 * **High-Bitrate Video**: Vertical (9:16 for Reels/TikTok/Shorts), Widescreen (16:9), and Square (1:1) video capture.
-* **Deterministic Render Pipeline**: Offline frame-by-frame synthesis guaranteeing pristine 60 FPS output regardless of device hardware.
+* **Export pipeline**: PNG/GIF use frame rendering; video uses real-time canvas capture and MediaRecorder. Actual video frame rate depends on browser and device performance; deterministic 60 FPS video is not guaranteed.
 * **Animated GIF & Single Frame Capture**: High-density animated GIF exporter and 4K still frame capture.
 
 ---
@@ -125,7 +125,7 @@ Every computation — from low-frequency Fourier transforms and spectral-flux be
                                          ▼
                       ┌──────────────────────────────────────┐
                       │       4K / 60FPS Video Exporter      │
-                      │ (Deterministic Offline / Realtime)   │
+                      │ (Frame Images / Realtime Video)     │
                       └──────────────────────────────────────┘
 ```
 
