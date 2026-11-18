@@ -1,6 +1,8 @@
-// usage: node tests/shot.mjs "?query" out.png [width height waitMs]
+// usage: node tests/shot.mjs "?query" [out.png] [width height waitMs]
+import os from 'node:os';
+import path from 'node:path';
 import { launch, attachLogs, BASE } from './util.mjs';
-const [q = '', out = '/tmp/shot.png', w = '900', h = '1200', wait = '2500'] = process.argv.slice(2);
+const [q = '', out = path.join(os.tmpdir(), 'react-shot.png'), w = '900', h = '1200', wait = '2500'] = process.argv.slice(2);
 const b = await launch();
 const p = await b.newPage({ viewport: { width: +w, height: +h }, deviceScaleFactor: 1 });
 const logs = attachLogs(p);

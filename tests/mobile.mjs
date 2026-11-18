@@ -1,8 +1,10 @@
-// Mobile portrait pass (iPhone-ish, touch). usage: node tests/mobile.mjs outDir
-import { chromium } from '/home/claude/.npm-global/lib/node_modules/playwright/index.mjs';
+// Mobile portrait pass (iPhone-ish, touch). usage: node tests/mobile.mjs [outDir]
+import { chromium } from 'playwright';
 import { attachLogs, BASE } from './util.mjs';
 import fs from 'node:fs';
-const out = process.argv[2]; fs.mkdirSync(out, { recursive: true });
+import os from 'node:os';
+import path from 'node:path';
+const out = process.argv[2] || path.join(os.tmpdir(), 'react-mobile-shots'); fs.mkdirSync(out, { recursive: true });
 const b = await chromium.launch({ args: ['--use-angle=swiftshader', '--use-gl=angle', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--autoplay-policy=no-user-gesture-required'] });
 const ctx = await b.newContext({ viewport: { width: 390, height: 780 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Version/17.0 Mobile/15E148 Safari/604.1' });
 const p = await ctx.newPage(); const logs = attachLogs(p);

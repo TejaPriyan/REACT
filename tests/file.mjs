@@ -1,8 +1,11 @@
+import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { launch, attachLogs } from './util.mjs';
 const b = await launch();
 const p = await b.newPage({ viewport: { width: 1100, height: 760 } });
 const logs = attachLogs(p);
-await p.goto('file:///home/claude/react-studio/dist/REACT.html'); await p.waitForTimeout(3000);
+const targetUrl = pathToFileURL(path.resolve(import.meta.dirname, '../dist/REACT.html')).href;
+await p.goto(targetUrl); await p.waitForTimeout(3000);
 console.log('title:', await p.title(), '| h1:', await p.textContent('h1'));
 await p.click('text=CREATE VISUAL');
 await p.waitForFunction(() => document.querySelector('.app')?.dataset.screen === 'studio', null, { timeout: 45000 });

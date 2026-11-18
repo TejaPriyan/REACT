@@ -1,7 +1,9 @@
 // Landing → studio smoke test with screenshots. usage: node tests/smoke.mjs [outDir] [w h]
 import { launch, attachLogs, BASE } from './util.mjs';
 import fs from 'node:fs';
-const out = process.argv[2] || '/tmp/claude-0/-home-claude/0cc182bc-31af-5fb8-8ae2-3c9b936e0fb9/scratchpad/shots';
+import os from 'node:os';
+import path from 'node:path';
+const out = process.argv[2] || path.join(os.tmpdir(), 'react-smoke-shots');
 const W = +(process.argv[3] || 1440), H = +(process.argv[4] || 900);
 fs.mkdirSync(out, { recursive: true });
 const b = await launch();

@@ -56,8 +56,8 @@ class AudioEngine {
     this.micActive = false;
   }
 
-  get duration() { return this.buffer ? this.buffer.duration : 0; }
-  get loaded() { return !!this.buffer; }
+  get duration() { return this.buffer ? this.buffer.duration : (this.micActive ? 9999 : 0); }
+  get loaded() { return !!this.buffer || this.micActive; }
 
   ensureContext() {
     if (this.ctx) {
@@ -142,12 +142,12 @@ class AudioEngine {
     return buf;
   }
 
-  clear() {
-    this.stopMic();
+  clear(opts = {}) {
     this._token++;
     this.stopSource();
     this.playing = false;
     this.buffer = null; this.reversed = null; this.analysis = null; this.pos = 0; this.name = '';
+    if (!opts.skipMicStop) this.stopMic({ skipClear: true });
     audioStore.set({ loaded: false, micActive: false, name: '', duration: 0, playing: false, analyzing: false, ready: false, beats: [], drops: [], peaks: null, bpm: 0, error: '' });
   }
 
@@ -197,7 +197,8 @@ class AudioEngine {
     }
   }
 
-  stopMic() {
+  stopMic(opts = {}) {
+    const wasMic = this.name === 'LIVE MICROPHONE / LINE-IN';
     if (this.micStream) {
       this.micStream.getTracks().forEach((t) => t.stop());
       this.micStream = null;
@@ -208,8 +209,8 @@ class AudioEngine {
     }
     this.micActive = false;
     audioStore.set({ micActive: false });
-    if (this.name === 'LIVE MICROPHONE / LINE-IN') {
-      this.clear();
+    if (!opts.skipClear && wasMic) {
+      this.clear({ skipMicStop: true });
     }
   }
 

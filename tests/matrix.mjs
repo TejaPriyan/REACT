@@ -1,7 +1,9 @@
-// usage: node tests/matrix.mjs materials|presets|bgs outdir [text] [t]
+// usage: node tests/matrix.mjs materials|presets|bgs [outdir] [text] [t]
 import { launch, attachLogs, BASE } from './util.mjs';
 import fs from 'node:fs';
-const [kind = 'materials', outdir = '/tmp/matrix', text = 'REACT', t = '21.3'] = process.argv.slice(2);
+import os from 'node:os';
+import path from 'node:path';
+const [kind = 'materials', outdir = path.join(os.tmpdir(), 'react-matrix'), text = 'REACT', t = '21.3'] = process.argv.slice(2);
 fs.mkdirSync(outdir, { recursive: true });
 const lists = {
   materials: ['chrome', 'glass', 'liquid', 'particle', 'neon', 'paper', 'pixel', 'organic'].map((m) => `mat=${m}`),

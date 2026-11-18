@@ -1,4 +1,4 @@
-import { chromium } from '/home/claude/.npm-global/lib/node_modules/playwright/index.mjs';
+import { chromium } from 'playwright';
 export const BASE = process.env.BASE || 'http://127.0.0.1:4173/';
 export async function launch(extra = []) {
   return chromium.launch({
